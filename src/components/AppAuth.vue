@@ -80,6 +80,13 @@
               Submit
             </button>
           </form>
+          <div
+            class="text-white text-center font-bold p-4 rounded mb-4"
+            v-if="reg_show_alert"
+            :class="reg_alert_variant"
+          >
+            {{ reg_alert_msg }}
+          </div>
           <!-- Registration Form -->
           <vee-form
             v-show="tab === 'register'"
@@ -172,6 +179,7 @@
             <button
               type="submit"
               class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition hover:bg-purple-700"
+              :disabled="reg_in_submission"
             >
               Submit
             </button>
@@ -203,6 +211,10 @@ export default {
       userData: {
         country: 'USA',
       },
+      reg_in_submission: false, // Will keep track of if the registration form is in submission
+      reg_show_alert: false, // Initially we hide the alert box
+      reg_alert_variant: 'bg-blue-500',
+      reg_alert_msg: 'Please wait! Your account is being created.',
     };
   },
   computed: {
@@ -211,6 +223,13 @@ export default {
   },
   methods: {
     register(values) {
+      this.reg_show_alert = true;
+      this.reg_in_submission = true;
+      this.reg_alert_variant = 'bg-blue-500';
+      this.reg_alert_msg = 'Please wait! Your account is being created.';
+
+      this.reg_alert_variant = 'bg-green-500';
+      this.reg_alert_msg = 'Success! Your account has been created.';
       console.log(values);
     },
   },
