@@ -2,10 +2,13 @@
   <AppHeader />
   <!-- Introduction -->
   <section class="mb-8 py-20 text-white text-center relative">
-    <div
-      class="absolute inset-0 w-full h-full bg-contain introduction-bg"
-      style="background-image: url(assets/img/header.png)"
-    ></div>
+    <div class="absolute inset-0 w-full h-full bg-contain introduction-bg">
+      <div class="video-container">
+        <video autoplay muted loop class="video-bg">
+          <source src="assets/videos/video-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
     <div class="container mx-auto">
       <div class="text-white main-header-content">
         <h1 class="font-bold text-5xl mb-5">Listen to Great Music!</h1>
@@ -17,14 +20,11 @@
       </div>
     </div>
 
-    <img
-      class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full"
-      src="/assets/img/introduction-music.png"
-    />
+
   </section>
 
   <!-- Main Content -->
-  <section class="container mx-auto">
+  <section class="container mx-auto mt-56">
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
       <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
         <span class="card-title">Songs</span>
@@ -279,3 +279,18 @@ export default {
   },
 };
 </script>
+
+<style>
+.video-container {
+  width: 100%;
+  height: 60vh;
+  
+}
+
+.video-bg {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0px 0px 10px 10px;
+}
+</style>
