@@ -19,8 +19,6 @@
         </p>
       </div>
     </div>
-
-
   </section>
 
   <!-- Main Content -->
@@ -284,7 +282,6 @@ export default {
 .video-container {
   width: 100%;
   height: 60vh;
-  
 }
 
 .video-bg {
